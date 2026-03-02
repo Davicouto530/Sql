@@ -15,5 +15,17 @@ alter table Teste.dbo.Categoria add constraint PK_categoria primary key (id)
 -- cria a chave primária da tabela Categoria
 -- impede duplicidade na coluna id
 
--- alter table Teste.dbo.Vendas drop constraint PK_vendas
--- remove uma constraint da tabela
+-- Adicionar FK FOREIGN KEY
+
+alter table Teste.dbo.Vendas add constraint fk_produto foreign key (product_id) 
+references dbo.Produto (id)
+-- Adicionando chave estrangeira 
+
+alter table Teste.dbo.Produto add constraint fk_categoria foreign key (id_categoria) 
+references dbo.Categoria (id)
+-- Adicionando chave estrangeira 
+
+-- Apagar PK e FK 
+
+alter table Teste.dbo.Categoria drop constraint PK_categoria
+-- remove uma constraint de PK e FK da tabela
