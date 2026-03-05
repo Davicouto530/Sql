@@ -19,3 +19,5 @@ update dbo.Produto SET nome = 'Calça apertadinha', id_categoria = 1 where id = 2
 -- Depois que iniciou a transação tem que fazer um dos dois abaixo, cancela ou salva
 ROLLBACK TRAN -- | Cancelar transação
 COMMIT TRAN -- | Salvar transação
+
+-- select * from dbo.Produto with (nolock)
